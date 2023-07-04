@@ -22,7 +22,18 @@ const userSchema = mongoose.Schema({
         type : Boolean,
         required : true,
         default : false
-    }
+    },
+
+    sid : {
+      type : Number,
+      required: true,
+      default:0
+    },
+
+    Class : {
+      type : Number,
+      default : 0 
+    },
 },
   {
     timestamps : true
