@@ -3,7 +3,13 @@
 .App{
   min-height: 100vh;
   display : flex; 
-  /* background-image: url("./backgroundLandingPage.jpg"); */
+  background-image: url("./background.jpg");
   background-size: cover;
   background-position: center;
+}
+
+.bi-person-circle{
+  width:20px;
+  height:20px;
+  background-color:gray;
 }
