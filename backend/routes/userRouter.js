@@ -1,5 +1,6 @@
 const express = require("express");
-const { registerUser, authUser } = require("../controllers/userController")
+const { registerUser, authUser,allUser } = require("../controllers/userController")
+const checkIfTeacher = require('../middleware/teacher');
 //const {protect} = require("../middleware/authMiddleware")
 const userRouter = express.Router();
 
@@ -11,5 +12,17 @@ userRouter
 userRouter
   .route("/")
   .post(registerUser)
+
+userRouter.get('/protected-route', checkIfTeacher, (req, res) => {
+    res.send('This is a protected route for teachers only.');
+  });
+  
+  module.exports = userRouter;
+
+userRouter
+  .route("/students")
+  .get(allUser)
+
+
 
 module.exports = userRouter;
